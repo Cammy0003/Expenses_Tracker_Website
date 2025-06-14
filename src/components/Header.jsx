@@ -3,12 +3,12 @@ import {NavLink} from "react-router-dom";
 
 const Header = () => {
     const [isHovered, setIsHovered] = useState(false);
-    const accentColor = ' #094eae ';
+    const accentColor = ' #0a2759 ';
 
     const styles = {
         header: {
             backgroundColor: '#333',
-            borderRadius: '30px',
+            borderRadius: '10px',
             // border: 'solid',
             padding: '20px 20px',
             display: 'flex',
@@ -25,6 +25,9 @@ const Header = () => {
         },
         title: {
             margin: 0,
+            marginLeft: 10,
+            fontSize: '50px',
+            textAlign: 'center',
         },
         amount: {
             backgroundColor: accentColor,
@@ -35,6 +38,7 @@ const Header = () => {
         nav: {
             display: 'flex',
             gap: '20px',
+            marginRight: 10,
         },
         link: {
             color: 'white',
@@ -49,11 +53,12 @@ const Header = () => {
         onMouseLeave={() => setIsHovered(false)}
     >
         <div style={styles.titleContainer}>
-            <h1 style={styles.title}>Expense Tracker</h1>
+            <NavLink to="/" style={styles.link}>
+                <h1 style={styles.title}>Worthy</h1>
+            </NavLink>
             <h2 style={styles.amount}>Current Worth:</h2>
         </div>
       <nav style={styles.nav}>
-          <NavLink to="/" style={styles.link}>Home</NavLink>
           <NavLink to="/about" style={styles.link}>About</NavLink>
           <NavLink to="/contact" style={styles.link}>Contact</NavLink>
       </nav>
